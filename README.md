@@ -67,6 +67,10 @@ the file indexes. It stays on the host when the container is recreated. Do not
 run `docker compose down --volumes`; the configuration directory is part of
 the deployment's persistent state.
 
+On first start, an empty `config/` directory receives the default web-server
+and web-user settings. Configure AirDC++'s active-mode ports separately, then
+keep the Compose mappings and AirDC++ settings in sync.
+
 Downloads are writable at `/downloads`. Shared files are available at
 `/shared` as read-only data.
 
