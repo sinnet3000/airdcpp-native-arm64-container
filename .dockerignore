@@ -1,0 +1,6 @@
+config
+.git
+*.log
+.buildroot-work
+.env
+compose.override.yaml

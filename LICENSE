@@ -1,0 +1,15 @@
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+This repository's original Docker, Compose, shell, configuration-template,
+documentation, and Buildroot recipe files are licensed under the GNU General
+Public License, version 3 or (at your option) any later version.
+
+SPDX-License-Identifier: GPL-3.0-or-later
+
+The full license text is available at:
+https://www.gnu.org/licenses/gpl-3.0.html
+
+The prebuilt AirDC++ portable archive and other bundled third-party
+components retain their respective upstream copyrights and licenses. See
+NOTICE.md before redistributing them.

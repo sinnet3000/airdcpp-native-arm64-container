@@ -1,0 +1,42 @@
+services:
+  airdcpp:
+    image: ghcr.io/sinnet3000/airdcpp-native-arm64-container:2.14.0-arm64
+    build:
+      context: .
+    platform: linux/arm64
+    container_name: airdcpp
+    restart: unless-stopped
+    ports:
+      # Keep the administration UI local until the default password is changed.
+      - "127.0.0.1:5600:5600/tcp"
+      - "21248:21248/tcp"
+      - "21248:21248/udp"
+      - "21249:21249/tcp"
+    volumes:
+      - ./config:/config
+      - type: bind
+        source: ${DOWNLOADS_DIR:?Set DOWNLOADS_DIR in .env}
+        target: /downloads
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${SHARE_DIR:?Set SHARE_DIR in .env}
+        target: /shared
+        read_only: true
+        bind:
+          create_host_path: false
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - --spider
+        - "--header=Accept: text/html"
+        - http://127.0.0.1:5600/
+      interval: 15s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+    stop_grace_period: 30s

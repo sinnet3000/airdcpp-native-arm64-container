@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "users": [
+      {
+        "last_login": 0,
+        "password": "SUA3QP6Q6TI5FEGIKP7RHK6J7653TEHCWENH4CY",
+        "permissions": [
+          "admin"
+        ],
+        "username": "user"
+      }
+    ]
+  },
+  "version": 1
+}

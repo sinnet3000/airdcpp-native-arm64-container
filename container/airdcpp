@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+cd /airdcpp
+
+if [ -z "$(find /config -mindepth 1 -maxdepth 1 -print -quit)" ]; then
+  cp -R /default_config/. /config/
+fi
+
+# Required so tini can forward SIGTERM and AirDC++ can persist configuration.
+exec ./airdcppd

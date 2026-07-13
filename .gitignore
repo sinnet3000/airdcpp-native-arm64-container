@@ -1,0 +1,7 @@
+config/
+.env
+compose.override.yaml
+.kata.toml
+.kata.local.toml
+*.log
+.buildroot-work/
