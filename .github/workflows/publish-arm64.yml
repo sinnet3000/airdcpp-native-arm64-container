@@ -45,6 +45,7 @@ jobs:
           flavor: latest=false
           tags: |
             type=semver,pattern={{version}}-arm64
+            type=semver,pattern={{major}}.{{minor}}.{{patch}}-arm64
 
       - name: Build ARM64 image
         id: push
