@@ -1,4 +1,4 @@
-FROM alpine:3.21
+FROM alpine:3.24
 
 # Native aarch64 runtime image. Alpine is available for aarch64, so the
 # container runs without qemu-user emulation.
